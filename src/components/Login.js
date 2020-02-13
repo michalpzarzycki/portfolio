@@ -17,10 +17,11 @@ function Login(props) {
     const [firebaseErr, setFirebaseErr] = useState(null)
 
     async function authenticateUser() {
+        const { name, email, password } = values;
+
         try {
-            const { name, email, password } = values;
             const response = login ?
-            await firebase.login(name, email) :
+            await firebase.login(email, password) :
             await firebase.register(name, email, password);
 
             props.history.push('/')

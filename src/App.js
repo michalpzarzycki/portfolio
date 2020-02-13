@@ -23,7 +23,7 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/articles" component={ArticlesList}/>
           <Route path="/addarticle" component={AddArticle} />
-          <Route path="/article" component={Article}/>
+          <Route path="/article/:articleId" component={Article}/>
         </Switch>
         </FirebaseContext.Provider>
         </BrowserRouter>

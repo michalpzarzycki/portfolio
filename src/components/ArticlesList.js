@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import ArticleItem from './ArticleItem'
 import FirebaseContext from '../firebase/context'
 import styles from './ArticlesList.module.css'
 
-function ArticlesList() {
-const { firebase } = React.useContext(FirebaseContext)
+function ArticlesList(props) {
+const { user, firebase } = React.useContext(FirebaseContext)
 const [articles, setArticles] = useState([])
  useEffect(() => {
      firebase.db.collection('articles').onSnapshot((snapshot) => {
       const arts = snapshot.docs.map(doc => {
              return { id:doc.id, ...doc.data()}
          })
+         console.log("arts",arts)
         setArticles(arts)
+        console.log("ARTICLES, ", articles)
         }
      )
      
  }, [])
+
+
+
+
     return(
         <div className={styles.mainDiv}>
 {articles.map((article, index) => {
-    return <div key={index}>INDEX{article.id}</div>
+    console.log("article", article)
+    return (
+    < ArticleItem key={index} article={article}/>
+    )
 })}
         </div>
     )

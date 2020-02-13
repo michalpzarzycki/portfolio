@@ -3,6 +3,7 @@ import useFormValidation from '../hooks/useFormValidation'
 import articleValidation from '../Auth/articleValidation'
 import styles from './AddArticle.module.css'
 import FirebaseContext from '../firebase/context'
+import { TextArea, Input, Button } from 'semantic-ui-react'
 
 
 const INITIAL_STATE = {
@@ -43,21 +44,23 @@ function handleArticleCreate() {
     return(
         <div className={styles.mainDiv}>
         <form onSubmit={handleSubmit} className={styles.form}>
-            <input 
+            <Input 
             name="title" 
             type="text" 
             placeholder="Enter the title"
+            autoComplete="off"
             onChange={handleChange}
             value={values.title} />
-            <input 
+            <Input 
             name="image"
              type="text"
               placeholder="Add image url"
+              autoComplete="off"
               onChange={handleChange}
               value={values.image} />
-            <textarea name="shortDesc" placeholder="Short description" onChange={handleChange} value={values.shortDesc}/>
-            <textarea name="longDesc" placeholder="Article..." onChange={handleChange} value={values.longDesc}/>
-            <button type="submit">ADD ARTICLE</button>
+            <TextArea name="shortDesc" style={{overflow:"auto", resize:"none"}} placeholder="Short description" onChange={handleChange} value={values.shortDesc} autoComplete="off"/>
+            <TextArea name="longDesc"  style={{overflow:"auto", resize:"none"}} placeholder="Article..." onChange={handleChange} value={values.longDesc} autoComplete="off"/>
+            <Button secondary type="submit">ADD ARTICLE</Button>
             
         </form>
         </div>

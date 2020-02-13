@@ -10,6 +10,7 @@ import './App.css'
 import useAuth from './hooks/useAuth';
 import firebase from './firebase/firebase'
 import Article from './components/Article';
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   const user = useAuth()

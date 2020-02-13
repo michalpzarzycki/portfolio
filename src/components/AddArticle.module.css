@@ -10,4 +10,6 @@
 .form {
     display: flex;
     flex-direction: column;
+    min-width: 600px;
+    min-height: 50vh;
 }

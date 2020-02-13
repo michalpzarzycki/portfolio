@@ -3,6 +3,7 @@ import styles from './Login.module.css'
 import useFormValidation from '../hooks/useFormValidation'
 import loginValidation from '../Auth/loginValidation'
 import firebase from '../firebase/firebase'
+import { Button, Input } from 'semantic-ui-react'
 
 const INITIAL_STATE = {
     name: "",
@@ -36,7 +37,7 @@ function Login(props) {
         <div className={styles.mainDiv}>
             <form onSubmit={handleSubmit} className={styles.form}>
                 {!login &&
-                    (<input
+                    (<Input
                         type="text"
                         name="name"
                         placeholder="Enter the name..."
@@ -48,7 +49,7 @@ function Login(props) {
                     )
                 }
 
-                <input
+                <Input
                     type="email"
                     name="email"
                     placeholder="Enter your e-mail..."
@@ -59,7 +60,7 @@ function Login(props) {
 
                 />
                 {errors.email && <p className={styles.errors}>BŁAD:{errors.email}</p>}
-                <input
+                <Input
                     type="text"
                     name="password"
                     placeholder="Choose your password..."
@@ -71,7 +72,7 @@ function Login(props) {
                 />
                 {errors.password && <p className={styles.password}>BŁAD:{errors.password}</p>}
 
-                {login || <input
+                {login || <Input
                     type="text"
                     name="repetedPassword"
                     placeholder="Repeat password"
@@ -84,9 +85,9 @@ function Login(props) {
 
 
 
-                <button type="Submit" style={{ background: isSubmit ? "grey" : "yellow" }}>SUBMIT</button>
-                <button type="button" onClick={() =>setLogin(prevState => !prevState)}>
-                    {!login ? "Already have an account" : "Do not have an account?"}</button>
+                <Button primary type="Submit">SUBMIT</Button>
+                <Button secondary type="button" onClick={() =>setLogin(prevState => !prevState)}>
+                    {!login ? "Already have an account" : "Do not have an account?"}</Button>
             </form>
         </div>
     )

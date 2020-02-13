@@ -10,8 +10,6 @@ const INITIAL_STATE = {
     image:'',
     shortDesc:'',
     longDesc:'',
-    date:'',
-    readMins:''
 
 }
 

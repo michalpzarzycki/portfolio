@@ -11,3 +11,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.errors {
+    background: red;
+    color: yellow;
+}

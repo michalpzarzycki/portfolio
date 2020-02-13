@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Article.module.css'
 import FirebaseContext from '../firebase/context'
+import { TextArea } from 'semantic-ui-react'
 const INITIAL_STATE = {
     name: "",
     email: "",
@@ -15,6 +16,7 @@ const INITIAL_STATE = {
 }
 function Article(props) {
     const { firebase, user } = React.useContext(FirebaseContext)
+    const [commentText, setCommentText] = useState("")
 
     const [article, setArticle] = useState(INITIAL_STATE)
     const ArticleId = props.match.params.articleId
@@ -28,7 +30,37 @@ function Article(props) {
         }
         )
 
-    }, [])
+    }, [commentText])
+
+    function handleComment() {
+        if(!user) {
+props.history.push('/login')
+        } else {
+const comRef = firebase.db.collection('articles').doc(ArticleId);
+comRef.get().then(doc => {
+    if(doc.exists) {
+        const previousComments = doc.data().comments;
+        const comment= {
+            postedBy: {
+                name: user.displayName,
+                id: user.uid
+            },
+            created: Date.now(),
+            text: commentText,
+            heart:false
+        }
+        const updatedComments = [...previousComments, comment]
+        comRef.update({comments: updatedComments})
+        setArticle(prevState =>(
+            { ...prevState, updatedComments}
+        ))
+        setCommentText("")
+    } else {
+
+    }
+})
+        }
+    }
 
     return (
         <div className={styles.mainDiv}>
@@ -48,10 +80,23 @@ function Article(props) {
 
             <p>{article.longDesc}</p>
 
-            <div>COMMENTS</div>
+            <div>
+                <TextArea
+                placeholder="Add comment"
+                value={commentText}
+                onChange={(event)=>(setCommentText(event.target.value))} />
+            </div>
 
-            <div>ADD COMMENT</div>
-
+            <div onClick={handleComment}>ADD COMMENT</div>
+            {article.comments.map((comment, index) => {
+                return(
+                    <div key={index}>
+                        <p>COM: {comment.text}</p>
+                <div>postedBy: {comment.postedBy.name}</div>
+                <div>{comment.created}</div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

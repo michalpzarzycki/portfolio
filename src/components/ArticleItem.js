@@ -1,6 +1,7 @@
 import React from 'react'
 import FirebaseContext from '../firebase/context'
 import { Link, withRouter } from 'react-router-dom'
+import { Icon } from 'semantic-ui-react'
 
 function ArticleItem({ article, index, history}) {
     const { user, firebase } = React.useContext(FirebaseContext)
@@ -33,7 +34,7 @@ function ArticleItem({ article, index, history}) {
                 <div>{article.created}</div>
                 <div>{article.postedBy.name}</div>
                 <div>| <Link to={`/article/${article.id}`} >read more</Link></div>
-                <div onClick={handleLikes}>LUBIE TO: {article.votes.length}</div>
+                <div onClick={handleLikes}><Icon name="thumbs up outline" />LUBIE TO: {article.votes.length}</div>
             </div>
         </div>
     )

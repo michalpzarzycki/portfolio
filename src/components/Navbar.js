@@ -13,7 +13,7 @@ console.log("USEEER", user)
             <div className={styles.logo}>LOGO</div>
             <div className={styles.links}>
                 <Link to="/">PIERWSZY</Link>
-                <Link to="/">PIERWSZY</Link>
+                <Link to="/addarticle">ADD ARTICLE</Link>
                 <Link to="/articles">ARTICLES</Link>
               {user ? <div onClick={() => firebase.logout()}>WYLOGUJ</div> : <Link to="/login">LOGIN</Link>}  
             </div>

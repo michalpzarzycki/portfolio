@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styles from './Login.module.css'
 import useFormValidation from '../hooks/useFormValidation'
 import loginValidation from '../Auth/loginValidation'
+import firebase from '../firebase/firebase'
 
 const INITIAL_STATE = {
     name: "",
@@ -10,12 +11,26 @@ const INITIAL_STATE = {
     repetedPassword: "",
 }
 
-function Login() {
+function Login(props) {
     const [login, setLogin] = useState(true);
-    const { handleChange, handleSubmit, handleBlur, values, errors, isSubmit } = useFormValidation(INITIAL_STATE, loginValidation, login)
+    const { handleChange, handleSubmit, handleBlur, values, errors, isSubmit } = useFormValidation(INITIAL_STATE, loginValidation, login, authenticateUser)
+    const [firebaseErr, setFirebaseErr] = useState(null)
 
+    async function authenticateUser() {
+        try {
+            const { name, email, password } = values;
+            const response = login ?
+            await firebase.login(name, email) :
+            await firebase.register(name, email, password);
 
-
+            props.history.push('/')
+        } catch(err) {
+       
+            setFirebaseErr(err)
+        }
+    
+        
+    }
     return (
         <div className={styles.mainDiv}>
             <form onSubmit={handleSubmit} className={styles.form}>
@@ -64,9 +79,11 @@ function Login() {
                     value={values.repeatedPassword}
                 />}
                 {errors.repetedPassword && <p className={styles.repetedPassword}>BŁAD:{errors.repetedPassword}</p>}
+                {firebaseErr && <p>BŁAD:{firebaseErr.message}</p>}
 
 
-                <button type="Submit" style={{ background: isSubmit ? "grey" : "yellow" }} disabled={isSubmit}>SUBMIT</button>
+
+                <button type="Submit" style={{ background: isSubmit ? "grey" : "yellow" }}>SUBMIT</button>
                 <button type="button" onClick={() =>setLogin(prevState => !prevState)}>
                     {!login ? "Already have an account" : "Do not have an account?"}</button>
             </form>

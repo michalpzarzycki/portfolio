@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import firebase from '../firebase/firebase'
 
 
 
-function useFormValidation(INITIAL_STATE, validation, isLoginPage) {
+function useFormValidation(INITIAL_STATE, validation, isLoginPage, authentication) {
 const [values, setValues] = useState(INITIAL_STATE);
 const [errors, setErrors] = useState("")
 const [isSubmit, setIsSubmit] = useState(false)
@@ -10,10 +11,12 @@ useEffect(() => {
 if(isSubmit) {
     if(Object.keys(errors).length===0) 
     {
+        authentication()
+
         setIsSubmit(false)
-        console.log("auth, ", values)
     } else {
         setIsSubmit(false)
+        
     }
 }
 
@@ -30,6 +33,8 @@ setValues(prevValues => ({
 function handleSubmit(event) {
 event.preventDefault();
 validation(values, isLoginPage)
+setIsSubmit(true)
+setErrors(validation(values))
 }
 
 function handleBlur() {

@@ -11,8 +11,8 @@ function Navbar() {
             <div className={styles.links}>
                 <Link to="/">PIERWSZY</Link>
                 <Link to="/">PIERWSZY</Link>
-                <Link to="/">PIERWSZY</Link>
-                <Link to="/">PIERWSZY</Link>
+                <Link to="/articles">ARTICLES</Link>
+                <Link to="/login">LOGIN</Link>
             </div>
         </div>
     )

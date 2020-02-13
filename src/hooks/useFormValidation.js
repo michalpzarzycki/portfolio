@@ -3,7 +3,7 @@ import firebase from '../firebase/firebase'
 
 
 
-function useFormValidation(INITIAL_STATE, validation, isLoginPage, authentication) {
+function useFormValidation(INITIAL_STATE, validation, isLoginPage="false", authentication) {
 const [values, setValues] = useState(INITIAL_STATE);
 const [errors, setErrors] = useState("")
 const [isSubmit, setIsSubmit] = useState(false)

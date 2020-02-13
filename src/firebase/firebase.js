@@ -1,6 +1,7 @@
 import app from 'firebase/app'
 import firebaseConfig from './firebaseConfig'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 
 
@@ -11,6 +12,7 @@ class Firebase {
         // Initialize Firebase
         app.initializeApp(firebaseConfig);
         this.auth = app.auth();
+        this.db = app.firestore()
 
     }
 

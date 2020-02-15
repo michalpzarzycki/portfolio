@@ -29,6 +29,7 @@ function Login(props) {
         } catch(err) {
        
             setFirebaseErr(err)
+            console.log(err)
         }
     
         

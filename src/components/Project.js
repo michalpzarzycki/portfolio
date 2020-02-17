@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Project.module.css'
-import { Icon, Image } from 'semantic-ui-react'
+import { Icon, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
+import ModalDev from './ModalDev'
 function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading }) {
 useEffect(()=>{
     console.log("LOADING W PROJEKCIE", loading)
@@ -24,6 +25,7 @@ const DEV_INFO = {
                link:'https://github.com/michalpzarzycki'
     } 
 }
+const DEV_LENGTH = Object.keys(DEV_INFO).length
 
 // const project ={
 //     title:"RecruitmentApp",
@@ -75,12 +77,12 @@ const DEV_INFO = {
                     console.log("DEVINFO", DEV_INFO)
                     console.log("DEVKINGA", DEV_INFO[developer])
                     return(
-                        <a href={DEV_INFO[developer].link}>
+                       
                            <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                      <Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
                         <span>{DEV_INFO[developer].name}</span>
-                        
-                    </div></a>
+                        <ModalDev devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
+                    </div>
                      
                     )
                    

@@ -37,7 +37,7 @@ console.log("LOADER W LISCIE", loading)
                 console.log("ORIGUT", project)
                 return(
                   
-                           <Link to="/">
+                    
                            <Project 
                     loading={loading}
                     title={project.title}
@@ -49,7 +49,7 @@ console.log("LOADER W LISCIE", loading)
                     
                     
                     />
-                           </Link>   
+                         
                    
               
                 )

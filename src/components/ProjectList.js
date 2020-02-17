@@ -1,40 +1,47 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Project from './Project'
 import styles from './ProjectList.module.css'
-
+import firebase from '../firebase/firebase'
+// const INITIAL_STATE = {
+//     description:"abcd"
+// }
 
 function ProjectList() {
+const [projects, setProjects] = useState([])
+    useEffect(() => {
+        firebase.db.collection('projects').onSnapshot((snapshot) => {
+         const pro = snapshot.docs.map(doc => {
+             console.log("DOC DATA", doc.data())
+                return { id:doc.id, ...doc.data()}
 
-    useEffect(() => (
-        console.log("JESTEM")
-    ), [])
+            })
+            console.log("PRO", pro)
+
+            
+           setProjects(pro)
+           console.log("PROJECTS ", projects)
+           }
+        )
+        
+    }, [])
     return(
         <div className={styles.mainDiv}>
-<Project 
-title="WeatherApp"
-descrition="A simple WeatherApp created with OpenWeatherApi"
-iconColor="blue"
-iconName="react"
-iconSize="huge"
+            {projects.map((project, index)=>{
+                console.log("ORIGUT", project)
+                return(
+                    <Project 
+                    title={project.title}
+                    descrition={projects.description}
+                    iconColor="blue"
+                    iconName={project.icon}
+                    iconSize="huge"
+                    developers={project.developers}
+                    
+                    
+                    />
+                )
+            })}
 
-/>
-<Project 
-title="RcruitmentApp"
-descrition="Medium size App with forum, test and interiew question created with best developers in Poland"
-iconColor="blue"
-iconName="js"
-iconSize="huge"
-
-/>
-
-<Project 
-title="TYTUØ"
-descrition="OPUS"
-iconColor="blue"
-iconName="css3 alternate"
-iconSize="huge"
-
-/>
 
     
         </div>

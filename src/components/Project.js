@@ -1,32 +1,32 @@
 import React from 'react'
 import styles from './Project.module.css'
 import { Icon, Image } from 'semantic-ui-react'
-function Project({ title, descrition, iconName, iconSize, iconColor }) {
-const project ={
-    title:"RecruitmentApp",
-    icon:'react',
-    description:"RecruitmentApp description",
-    dates: {
-        create:"CRETED:",
-        lastChanges:"LAST CHANGES"
-    },
-    developers: [{
-        name:"Mateusz Rostkowski",
-        avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-        link:''
-    },
-    {
-        name:"Michał Zarzycki",
-        avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-        link:''
-    },
-    {
-        name:"Kinga Zawarczynska",
-        avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-        link:''
-    }]
+function Project({ title, descrition, iconName, iconSize, iconColor, developers }) {
+// const project ={
+//     title:"RecruitmentApp",
+//     icon:'react',
+//     description:"RecruitmentApp description",
+//     dates: {
+//         create:"CRETED:",
+//         lastChanges:"LAST CHANGES"
+//     },
+//     developers: [{
+//         name:"Mateusz Rostkowski",
+//         avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+//         link:''
+//     },
+//     {
+//         name:"Michał Zarzycki",
+//         avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+//         link:''
+//     },
+//     {
+//         name:"Kinga Zawarczynska",
+//         avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+//         link:''
+//     }]
 
-}
+// }
 
 
 
@@ -46,7 +46,7 @@ const project ={
                         <span>Developed by: </span>
                     </div>
 
-                    {project.developers.map((developer) => {
+                    {developers.map((developer) => {
                         return(
                             <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                             <Image  size="tiny" src={developer.avatar} avatar />

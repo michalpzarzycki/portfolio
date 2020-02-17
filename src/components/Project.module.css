@@ -10,11 +10,22 @@
     /* background: url("https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"); */
     font-family: 'Roboto', sans-serif;
     background-color: black;
-
+    transition: all;
+    transition-duration: 1s;
 
     -webkit-box-shadow: 0px 0px 20px 3px  rgba(57,255,20,1);
     -moz-box-shadow: 0px 0px 20px 3px  rgba(57,255,20,1);
     box-shadow: 0px 0px 20px 3px rgba(57,255,20,1);
+}
+.mainDiv:hover {
+    transition: all;
+    transition-duration: 1s;
+    color:rgba(57,255,20,1);
+    border: 2px solid  rgba(40,164,247,1);
+
+    -webkit-box-shadow: 0px 0px 20px 3px rgba(40,164,247,1);
+-moz-box-shadow: 0px 0px 20px 3px rgba(40,164,247,1);
+box-shadow: 0px 0px 20px 3px rgba(40,164,247,1);
 }
 
 .leftSide {

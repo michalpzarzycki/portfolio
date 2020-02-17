@@ -3,6 +3,7 @@ import Project from './Project'
 import Loading from './Loading'
 import styles from './ProjectList.module.css'
 import firebase from '../firebase/firebase'
+import { Link } from 'react-router-dom'
 // const INITIAL_STATE = {
 //     description:"abcd"
 // }
@@ -31,12 +32,13 @@ console.log("LOADER W LISCIE", loading)
         
     }, [])
     return(<React.Fragment>
-        {!loading ? <Loading /> :         <div className={styles.mainDiv}>
+        {loading ? <Loading /> :         <div className={styles.mainDiv}>
             {projects.map((project, index)=>{
                 console.log("ORIGUT", project)
                 return(
                   
-                              <Project 
+                           <Link to="/">
+                           <Project 
                     loading={loading}
                     title={project.title}
                     descrition={projects.description}
@@ -47,6 +49,7 @@ console.log("LOADER W LISCIE", loading)
                     
                     
                     />
+                           </Link>   
                    
               
                 )

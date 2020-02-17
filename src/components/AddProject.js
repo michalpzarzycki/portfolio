@@ -72,7 +72,7 @@ function handleProjectCreate() {
                     setSelectDev(arrDev)
                 } }
                 >
-
+                <option>___CHOOSE DEV___</option>
                 <option value="Michał">Michał Zarzycki</option>
                 <option value="Kinga">Kinga Zawarczynska</option>
                 <option value="Mateusz">Mateusz Rostkowski</option>

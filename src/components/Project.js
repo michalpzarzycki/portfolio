@@ -14,6 +14,11 @@ const DEV_INFO = {
         name:"Mateusz Rostkowski",
                avatar: 'https://avatars0.githubusercontent.com/u/38006370?s=460&v=4',
                link:'https://github.com/MateuszRostkowski'
+    } ,
+    "Michał": {
+        name:"Michał Zarzycki",
+               avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+               link:'https://github.com/michalpzarzycki'
     } 
 }
 

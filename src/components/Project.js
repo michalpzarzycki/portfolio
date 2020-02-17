@@ -2,7 +2,36 @@ import React from 'react'
 import styles from './Project.module.css'
 import { Icon, Image } from 'semantic-ui-react'
 function Project({ title, descrition, iconName, iconSize, iconColor }) {
+const project ={
+    title:"RecruitmentApp",
+    icon:'react',
+    description:"RecruitmentApp description",
+    dates: {
+        create:"CRETED:",
+        lastChanges:"LAST CHANGES"
+    },
+    developers: [{
+        name:"Mateusz Rostkowski",
+        avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+        link:''
+    },
+    {
+        name:"Michał Zarzycki",
+        avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+        link:''
+    },
+    {
+        name:"Kinga Zawarczynska",
+        avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+        link:''
+    }]
+
+}
+
+
+
     return (
+        
         <div className={styles.mainDiv}>
             <div className={styles.leftSide}>
                 <div className={styles.titleSection}>
@@ -16,7 +45,16 @@ function Project({ title, descrition, iconName, iconSize, iconColor }) {
                     <Image  size="tiny" src='https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' avatar />
                         <span>Developed by: </span>
                     </div>
-                    <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
+
+                    {project.developers.map((developer) => {
+                        return(
+                            <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
+                            <Image  size="tiny" src={developer.avatar} avatar />
+                            <span>{developer.name}</span>
+                        </div>
+                        )
+                    })}
+                    {/* <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                         <Image  size="tiny" src='https://avatars2.githubusercontent.com/u/41584779?s=460&v=4' avatar />
                         <span>Michał Zarzycki</span>
                     </div>
@@ -27,7 +65,7 @@ function Project({ title, descrition, iconName, iconSize, iconColor }) {
                     <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                     <Image size="tiny" src='https://avatars0.githubusercontent.com/u/38006370?s=460&v=4' avatar />
                         <span>Mateusz Rostkowski</span>
-                    </div>
+                    </div> */}
 
             
 

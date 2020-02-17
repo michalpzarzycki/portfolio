@@ -32,3 +32,13 @@
 .description {
     font-size: 15px;
 }
+
+
+
+.border {
+    border: 2px solid green!important;
+    -webkit-box-shadow: 0px 0px 20px 3px rgba(40,164,247,1)!important;
+-moz-box-shadow: 0px 0px 20px 3px rgba(40,164,247,1)!important;
+box-shadow: 0px 0px 20px 3px rgba(40,164,247,1)!important;
+
+}

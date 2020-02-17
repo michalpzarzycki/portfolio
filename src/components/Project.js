@@ -8,7 +8,11 @@ function Project({title, descrition, iconName, iconSize, iconColor}) {
                 <div className={styles.title}>{title}</div>
                 <div className={styles.descrition}>{descrition}</div>
             </div>
-            <div className={styles.rightSide}><Icon name={iconName} size={iconSize} color={iconColor}/></div>
+            <div className={styles.rightSide}>
+
+                     <Icon circular inverted color='black'  name={iconName} size={iconSize} className={styles.border}/>
+</div>
+
         </div>
     )
 }

@@ -15,7 +15,7 @@ title="WeatherApp"
 descrition="A simple WeatherApp created with OpenWeatherApi"
 iconColor="blue"
 iconName="react"
-iconSize="massive"
+iconSize="huge"
 
 />
 <Project 
@@ -23,7 +23,7 @@ title="RcruitmentApp"
 descrition="Medium size App with forum, test and interiew question created with best developers in Poland"
 iconColor="blue"
 iconName="js"
-iconSize="massive"
+iconSize="huge"
 
 />
 
@@ -32,7 +32,7 @@ title="TYTUØ"
 descrition="OPUS"
 iconColor="blue"
 iconName="css3 alternate"
-iconSize="massive"
+iconSize="huge"
 
 />
 

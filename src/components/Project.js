@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Project.module.css'
 import { Icon, Image } from 'semantic-ui-react'
 function Project({ title, descrition, iconName, iconSize, iconColor, developers }) {
+
+const DEV_INFO = {
+    "Kinga" : {
+        name:"Kinga Zawarczynska",
+                avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+            link:''
+    },
+    "Mateusz": {
+        name:"Mateusz Rostkowski",
+               avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+               link:''
+    } 
+}
+
 // const project ={
 //     title:"RecruitmentApp",
 //     icon:'react',
@@ -21,9 +35,7 @@ function Project({ title, descrition, iconName, iconSize, iconColor, developers 
 //         link:''
 //     },
 //     {
-//         name:"Kinga Zawarczynska",
-//         avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-//         link:''
+//        
 //     }]
 
 // }
@@ -47,12 +59,16 @@ function Project({ title, descrition, iconName, iconSize, iconColor, developers 
                     </div>
 
                     {developers.map((developer) => {
+                        console.log("DEV", developer)
+                        console.log("DEVINFO", DEV_INFO)
+                        console.log("DEVKINGA", DEV_INFO[developer])
                         return(
                             <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                            <Image  size="tiny" src={developer.avatar} avatar />
-                            <span>{developer.name}</span>
+                            <Image  size="tiny" src={DEV_INFO[developer].avatar} avatar />
+                            <span>KINGA</span>
                         </div>
                         )
+                       
                     })}
                     {/* <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                         <Image  size="tiny" src='https://avatars2.githubusercontent.com/u/41584779?s=460&v=4' avatar />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import ArticleItem from './ArticleItem'
 import FirebaseContext from '../firebase/context'
+import {ItemGroup} from 'semantic-ui-react'
 import styles from './ArticlesList.module.css'
 
 function ArticlesList(props) {
@@ -25,12 +26,15 @@ const [articles, setArticles] = useState([])
 
     return(
         <div className={styles.mainDiv}>
+            <ItemGroup divided>
 {articles.map((article, index) => {
     console.log("article", article)
     return (
-    < ArticleItem key={index} article={article}/>
+     
+    <ArticleItem key={index} article={article}/>
     )
 })}
+   </ItemGroup>
         </div>
     )
 }

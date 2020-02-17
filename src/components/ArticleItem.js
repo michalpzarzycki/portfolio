@@ -1,7 +1,8 @@
 import React from 'react'
 import FirebaseContext from '../firebase/context'
 import { Link, withRouter } from 'react-router-dom'
-import { Icon } from 'semantic-ui-react'
+import { Icon, Item, Label, Image } from 'semantic-ui-react'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import styles from './ArticleItem.module.css'
 
 function ArticleItem({ article, index, history }) {
@@ -28,21 +29,23 @@ function ArticleItem({ article, index, history }) {
 
 
     return (
-        <div key={index} className={styles.mainDiv}>
-            <div className={styles.title}>{article.title}</div>
-            <div className={styles.description}>{article.shortDesc}</div>
-            <div className={styles.details}>
-                <div className={styles.rightDetails}>
-                    <div>{article.postedBy.name}</div>
-                    <div>| <Link to={`/article/${article.id}`} >read more</Link></div>
-                </div>
-                <div className={styles.leftDetails}>
-                    <div>{article.created}</div>
-                    <div onClick={handleLikes}><Icon name="thumbs up outline" />LUBIE TO: {article.votes.length}</div>
-                </div>
-
-            </div>
-        </div>
+  
+         <Item>
+         <Item.Image src='https://as1.ftcdn.net/jpg/00/76/31/18/500_F_76311829_sT3gJDd0aBdx497WkO72gs9vjCl22N8l.jpg' />
+   
+         <Item.Content>
+           <Item.Header as='a'>{article.title}</Item.Header>
+           <Item.Meta>
+             <span>{`Posted by: ${article.postedBy.name}`}</span>
+           </Item.Meta>
+           <Item.Description>{article.shortDesc}</Item.Description>
+           <Item.Extra>
+             <Label><Link to={`/article/${article.id}`}>Read more!</Link></Label>
+             <Label  content={`Created ${formatDistanceToNow(article.created, { addSuffix: true })}`} />
+             <Label icon='heart'  onClick={handleLikes} content={article.votes.length} />
+           </Item.Extra>
+         </Item.Content>
+       </Item>
     )
 }
 

@@ -13,19 +13,19 @@ function Project({ title, descrition, iconName, iconSize, iconColor }) {
                 <div className={styles.developers}>
 
                     <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                    <Image src='https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' avatar />
+                    <Image  size="tiny" src='https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' avatar />
                         <span>Developed by: </span>
                     </div>
                     <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                        <Image src='https://avatars2.githubusercontent.com/u/41584779?s=460&v=4' avatar />
+                        <Image  size="tiny" src='https://avatars2.githubusercontent.com/u/41584779?s=460&v=4' avatar />
                         <span>Michał Zarzycki</span>
                     </div>
                     <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                    <Image src='https://avatars0.githubusercontent.com/u/55411091?s=460&v=4' avatar />
+                    <Image  size="tiny" src='https://avatars0.githubusercontent.com/u/55411091?s=460&v=4' avatar />
                         <span>Kinga Zawarczyńska</span>
                     </div>
                     <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                    <Image src='https://avatars0.githubusercontent.com/u/38006370?s=460&v=4' avatar />
+                    <Image size="tiny" src='https://avatars0.githubusercontent.com/u/38006370?s=460&v=4' avatar />
                         <span>Mateusz Rostkowski</span>
                     </div>
 

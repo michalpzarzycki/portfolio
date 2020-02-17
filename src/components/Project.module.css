@@ -66,3 +66,13 @@ box-shadow: 0px 0px 20px 3px rgba(40,164,247,1)!important;
 .developer {
 
 }
+
+.avatar {
+    border: 2px solid  rgb(57, 255, 20)!important;
+    -webkit-box-shadow: 0px 0px 10px 3px rgba(40,164,247,1)!important;
+-moz-box-shadow: 0px 0px 10px 3px rgba(40,164,247,1)!important;
+box-shadow: 0px 0px 10px 3px rgba(40,164,247,1)!important;
+}
+.avatar:hover {
+    box-shadow: 0px 0px 10px 3px rgb(57, 255, 20)!important;
+}

@@ -1,11 +1,11 @@
 .mainDiv {
     width: 100%;
-    height: 10vw;
+    height: 5vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    
+    margin-bottom: 10px;
     
 
 }

@@ -1,7 +1,7 @@
 .mainDiv {
     display: flex;
     width: 900px;
-    min-height: 300px;
+ 
     justify-content: center;
     align-items: center;
     border: 2px solid rgb(57, 255, 20);
@@ -44,6 +44,7 @@ box-shadow: 0px 0px 20px 3px rgba(40,164,247,1);
 
 .titleSection {
     margin-bottom: 10px;
+    margin-top:10px;
 }
 
 .title {

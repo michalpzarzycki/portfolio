@@ -13,9 +13,11 @@ console.log("USEEER", user)
             <div className={styles.logo}>LOGO</div>
             <div className={styles.links}>
                 <Link to="/projects">My projects</Link>
-                <Link to="/addarticle">ADD ARTICLE</Link>
+                {user && <Link to="/addarticle">ADD ARTICLE</Link>}
+               {user && <Link to="/adddev">ADD DEV</Link>}
+               {user && <Link to="addproject">ADD PROJECT</Link>}
                 <Link to="/articles">ARTICLES</Link>
-              {user ? <div onClick={() => firebase.logout()}>WYLOGUJ</div> : <Link to="/login">LOGIN</Link>}  
+              {user ? <div style={{color:"white", cursor:"pointer"}} onClick={() => firebase.logout()}>SIGN OUT</div> : <Link to="/login">LOGIN</Link>}  
             </div>
         </div>
     )

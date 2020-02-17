@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styles from './Project.module.css'
 import { Icon, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import Loading from './Loader'
+import Loading from './Loading'
 function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading }) {
 useEffect(()=>{
     console.log("LOADING W PROJEKCIE", loading)

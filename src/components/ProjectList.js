@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Project from './Project'
-import Loading from './Loader'
+import Loading from './Loading'
 import styles from './ProjectList.module.css'
 import firebase from '../firebase/firebase'
 // const INITIAL_STATE = {
@@ -31,7 +31,7 @@ console.log("LOADER W LISCIE", loading)
         
     }, [])
     return(<React.Fragment>
-        {loading ? <Loading /> :         <div className={styles.mainDiv}>
+        {!loading ? <Loading /> :         <div className={styles.mainDiv}>
             {projects.map((project, index)=>{
                 console.log("ORIGUT", project)
                 return(

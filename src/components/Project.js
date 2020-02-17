@@ -78,10 +78,11 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
                     console.log("DEVKINGA", DEV_INFO[developer])
                     return(
                        
-                           <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
-                     <Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
-                        <span>{DEV_INFO[developer].name}</span>
-                        <ModalDev devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
+                           <div  >
+                     
+                        <ModalDev triger={<div
+                        style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px", cursor:"pointer"}}><Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
+                        <span>{DEV_INFO[developer].name}</span></div>} devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
                     </div>
                      
                     )

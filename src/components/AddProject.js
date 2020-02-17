@@ -10,13 +10,15 @@ const INITIAL_STATE = {
     icon:'',
     description:'',
     dates: {},
-    developers: {}
+    developers: []
 
 }
 
 function AddProject(props) {
 
     const { user, firebase } = React.useContext(FirebaseContext)
+    const [inputs, setInputs] = React.useState([]);
+    const [selectDev, setSelectDev] = React.useState([])
 const { handleSubmit, handleChange, values } = useFormValidation(INITIAL_STATE, validateArticle, null,handleProjectCreate)
 function validateArticle() {
     return 0;
@@ -30,27 +32,12 @@ function handleProjectCreate() {
             title,
             icon, 
             description,
-            dates: {
-                created:"",
-                lastChange:""
-            }, 
-            developers: [{
-                name:"Mateusz Rostkowski",
-                avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-                link:''
-            },
-            {
-                name:"Michał Zarzycki",
-                avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-                link:''
-            },
-            {
-                name:"Kinga Zawarczynska",
-                avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-                link:''
-            }]
+            dates,
+            developers: [...selectDev]
 
         }
+
+        console.log("newPro",newLink)
         firebase.db.collection('projects').add(newLink);
     }
 }
@@ -72,7 +59,49 @@ function handleProjectCreate() {
               onChange={handleChange}
               value={values.icon} />
             <TextArea name="description" style={{overflow:"auto", resize:"none"}} placeholder=" description" onChange={handleChange} value={values.description} autoComplete="off"/>
-            <Button secondary type="submit">ADD ARTICLE</Button>
+           <Button type="button" 
+           onClick={() => {
+               const newSelect = selectDev.concat(   <select 
+                name="developers" onChange={(e) => {
+                    console.log("SEL", [e.target.name], e.target.value)
+                  
+                    console.log("ARR DEV", selectDev)
+                }} 
+                onChange={(e) => {
+                    const arrDev = [...selectDev, e.target.value]
+                    setSelectDev(arrDev)
+                } }
+                >
+
+                <option value="Michał">Michał Zarzycki</option>
+                <option value="Kinga">Kinga Zawarczynska</option>
+                <option value="Mateusz">Mateusz Rostkowski</option>
+            </select>);
+            console.log("SELECTED", values.developers )
+            setSelectDev(newSelect)
+        
+
+           }}>ADD DEVELOPER FROM DATABASE</Button>
+         {selectDev.map(dev => {return <p style={{background:"black", color:"white"}}>SELECTED DEVS: {dev}</p>})}
+           <Button type="button" onClick={() => {
+              const newInput = inputs.concat(<input />)
+              setInputs(newInput)
+           }}>Add developer</Button>
+         {inputs.map((input, index) => {
+         return( 
+             <React.Fragment>
+
+                <h1>DEVELOPER #{index+1}</h1>
+<input type="text" placeholder="Developer name"  onChange={handleChange}
+            value={values.developers.name}/>
+<input type="text" placeholder="avatar"  onChange={handleChange}
+            value={values.developers.avatar}/>
+<input type="text" placeholder="Github Url"  onChange={handleChange}
+            value={values.developers.link}/>
+             </React.Fragment>
+         )
+         })}           
+            <Button secondary type="submit">ADD PROJECT</Button>
             
         </form>
         </div>

@@ -13,6 +13,7 @@ import Article from './components/Article';
 import ProjectList from './components/ProjectList';
 import AddProject from './components/AddProject'
 import ProjectDetail from './components/ProjectDetail'
+import AddDev from './components/AddDev'
 
 import 'semantic-ui-css/semantic.min.css'
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/addarticle" component={AddArticle} />
           <Route path="/projects" component={ProjectList}/>
           <Route path="/addproject" component={AddProject} />
+          <Route path="/adddev" component={AddDev} />
           <Route path="/article/:articleId" component={Article}/>
           <Route path="/project/:projectId" component={ProjectDetail}></Route>
         </Switch>

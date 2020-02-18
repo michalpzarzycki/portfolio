@@ -12,6 +12,7 @@ import firebase from './firebase/firebase'
 import Article from './components/Article';
 import ProjectList from './components/ProjectList';
 import AddProject from './components/AddProject'
+import ProjectDetail from './components/ProjectDetail'
 
 import 'semantic-ui-css/semantic.min.css'
 
@@ -22,6 +23,7 @@ function App() {
         <BrowserRouter>
         <FirebaseContext.Provider value={{ user, firebase }}>
         <Navbar />
+        <div style={{marginTop:"30px"}}>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/login" component={Login}/>
@@ -30,7 +32,9 @@ function App() {
           <Route path="/projects" component={ProjectList}/>
           <Route path="/addproject" component={AddProject} />
           <Route path="/article/:articleId" component={Article}/>
+          <Route path="/project/:projectId" component={ProjectDetail}></Route>
         </Switch>
+        </div>
         </FirebaseContext.Provider>
         </BrowserRouter>
     </div>

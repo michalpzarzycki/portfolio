@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Article.module.css'
 import FirebaseContext from '../firebase/context'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import Loading from './Loading'
-import { TextArea, Comment, Header, Form, Button } from 'semantic-ui-react'
+import { Comment, Header, Form, Button, Message } from 'semantic-ui-react'
 const INITIAL_STATE = {
     name: "",
     email: "",
@@ -65,58 +66,64 @@ function Article(props) {
     }
 
     return (<React.Fragment>
-        {isLoading ? <Loading  /> :  <div className={styles.mainDiv}>
-        <h1 className={styles.title}>{article.title}</h1>
-        <p className={styles.short}>{article.shortDesc}</p>
+        {isLoading ? <Loading /> :
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", top: "30px" }}>
+                <div className={styles.mainDiv}>
+                    <h1 className={styles.title}>{article.title}</h1>
+                    {/* <p className={styles.short}>{article.shortDesc}</p> */}
+                    <Message color='blue'>{article.shortDesc}</Message>
 
-        <div className={styles.infoSection}>
-            <div className={styles.who}>
-                <div>kto: {article.postedBy.name}</div>
-                <div>kiedy: {article.created}</div>
-            </div>
-            <div className={styles.likes}>
-                <div>LAJKI:{article.votes.length}</div>
-                <div>ile czytania:</div>
-            </div>
-        </div>
 
-        <p>{article.longDesc}</p>
+                    <div className={styles.infoSection} style={{width:"70%", justifyContent:"center"}}>
+                        
+                            <div>{`Posted by: ${article.postedBy.name} |`}</div>
+                            <div>{` Created: ${formatDistanceToNow(article.created, {addSuffix: true})} |`}</div>
+                       
+                  
+                            <div>{` LIKES: ${article.votes.length} |`}</div>
+                            <div> 4 minutes read</div>
+                  
+                    </div>
 
-   
+                    <p style={{ width: "70%" }}>{article.longDesc}</p>
 
-       
-        <Comment.Group>
-        <Form reply>
-  <Form.TextArea   placeholder="Add comment"
-                value={commentText}
-                onChange={(event) => (setCommentText(event.target.value))} />
-  <Button content='Add comment!' onClick={handleComment} labelPosition='left' icon='edit' primary  />
-</Form>
-<Header as='h3' dividing>
-  Comments
+
+
+
+                    <Comment.Group>
+                        <Form reply>
+                            <Form.TextArea placeholder="Add comment"
+                                
+                                value={commentText}
+                                onChange={(event) => (setCommentText(event.target.value))} />
+                            <Button content='Add comment!' onClick={handleComment} labelPosition='left' icon='edit' primary />
+                        </Form>
+                        <Header as='h3' dividing>
+                            Comments
 </Header>
 
-        {article.comments.map((comment, index) => {
-            return (
-                    <Comment key={index}>
-                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-                    <Comment.Content>
-                      <Comment.Author as='a'>{comment.postedBy.name}</Comment.Author>
-                      <Comment.Metadata>
-                        <div>{comment.created}</div>
-                      </Comment.Metadata>
-                      <Comment.Text>{comment.text}</Comment.Text>
-                      <Comment.Actions>
-                        {/* <Comment.Action>Reply</Comment.Action> */}
-                      </Comment.Actions>
-                    </Comment.Content>
-                  </Comment>
-            )
-        })}
-  
-          </Comment.Group>
-    </div>}
-    </React.Fragment>    
+                        {article.comments.map((comment, index) => {
+                            return (
+                                <Comment key={index}>
+                                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+                                    <Comment.Content>
+                                        <Comment.Author as='a'>{comment.postedBy.name}</Comment.Author>
+                                        <Comment.Metadata>
+                                            <div>{comment.created}</div>
+                                        </Comment.Metadata>
+                                        <Comment.Text>{comment.text}</Comment.Text>
+                                        <Comment.Actions>
+                                            {/* <Comment.Action>Reply</Comment.Action> */}
+                                        </Comment.Actions>
+                                    </Comment.Content>
+                                </Comment>
+                            )
+                        })}
+
+                    </Comment.Group>
+                </div>
+            </div>}
+    </React.Fragment>
     )
 }
 

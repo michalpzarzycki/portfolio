@@ -2,7 +2,7 @@ import React from 'react'
 import useFormValidation from '../hooks/useFormValidation'
 import styles from './AddArticle.module.css'
 import FirebaseContext from '../firebase/context'
-import { TextArea, Input, Button } from 'semantic-ui-react'
+import { TextArea, Input, Button, Checkbox } from 'semantic-ui-react'
 
 
 const INITIAL_STATE = {

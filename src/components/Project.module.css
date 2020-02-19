@@ -1,7 +1,7 @@
 .mainDiv {
     display: flex;
     width: 900px;
- 
+    height: 400px;
     justify-content: center;
     align-items: center;
     border: 2px solid rgb(57, 255, 20);
@@ -12,6 +12,7 @@
     background-color: black;
     transition: all;
     transition-duration: 1s;
+    position: relative;
 
     -webkit-box-shadow: 0px 0px 20px 3px  rgba(57,255,20,1);
     -moz-box-shadow: 0px 0px 20px 3px  rgba(57,255,20,1);
@@ -87,4 +88,24 @@ box-shadow: 0px 0px 10px 3px rgba(40,164,247,1)!important;
 }
 .avatar:hover {
     box-shadow: 0px 0px 10px 3px rgb(57, 255, 20)!important;
+}
+
+.notStarted {
+    width: 900px;
+    height: 400px;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 89;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    border: 2px solid rgb(57, 255, 20);
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.none {
+    display: none;
 }

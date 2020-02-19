@@ -7,7 +7,8 @@ import { Icon } from 'semantic-ui-react'
 const INIT_STATE = {
     title: "",
     description: "",
-    featuresDone:[]
+    featuresDone:[],
+    link:""
 }
 
 function ProjectDetail(props) {
@@ -20,6 +21,7 @@ function ProjectDetail(props) {
         projectRef.get().then(doc => {
             setProject({ ...doc.data(), id: doc.id })
             setIsLoading(false)
+            console.log("PRO",project)
         }
         )
     }, [])
@@ -32,6 +34,7 @@ function ProjectDetail(props) {
             <div className={styles.content}>
                 <div>PROJECT NAME: {project.title}</div>
                 <div>DESCRIPTION: {project.description}</div>
+    <a href={project.link}>GITHUB LINK: {project.link}</a>
    {project.featuresDone.map((done)=>{
           return <div><Icon name="check" />{done}</div>
    })}

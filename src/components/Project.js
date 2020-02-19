@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import ModalDev from './ModalDev'
 function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading, project }) {
+    const {isStarted} = project;
 useEffect(()=>{
     console.log("LOADING W PROJEKCIE", loading)
 },[])
@@ -30,11 +31,15 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
 
 
     return (<React.Fragment>
+  
       <div className={styles.mainDiv}>
-          
+      <div className={project.isStarted ? styles.none : styles.notStarted} >
+      the project has not started yet
+   </div>
         <div className={styles.leftSide}>
             <div className={styles.titleSection}>
     <div className={styles.title}><Link to={`/project/${project.id}`}>{title}</Link></div>
+    
                 <div className={styles.data}>data dodania i ostatniej modyfikacji</div>
             </div>
             <div className={styles.descrition}>{descrition}</div>
@@ -48,14 +53,8 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
                 </div>
 
                 {developers.map((developer) => {
-                    console.log("DEVS", developers)
-                    console.log("DEV", developer)
-                    console.log("DEVINFO", DEV_INFO)
-                    console.log("DEVKINGA", DEV_INFO[developer])
                     return(
-                       
-                           <div  >
-                     
+                           <div>
                         <ModalDev triger={<div
                         style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px", cursor:"pointer"}}><Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
                         <span>{DEV_INFO[developer].name}</span></div>} devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
@@ -77,7 +76,7 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
         </div>
 
     </div>
-    
+
             </React.Fragment>)
 }
 

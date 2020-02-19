@@ -46,6 +46,7 @@ console.log("LOADER W LISCIE", loading)
                     iconName={project.icon}
                     iconSize="huge"
                     developers={project.developers}
+                    project={project}
                     
                     
                     />

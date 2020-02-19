@@ -4,7 +4,7 @@ import { Icon, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import ModalDev from './ModalDev'
-function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading }) {
+function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading, project }) {
 useEffect(()=>{
     console.log("LOADING W PROJEKCIE", loading)
 },[])
@@ -27,30 +27,6 @@ const DEV_INFO = {
 }
 const DEV_LENGTH = Object.keys(DEV_INFO).length
 
-// const project ={
-//     title:"RecruitmentApp",
-//     icon:'react',
-//     description:"RecruitmentApp description",
-//     dates: {
-//         create:"CRETED:",
-//         lastChanges:"LAST CHANGES"
-//     },
-//     developers: [{
-//         name:"Mateusz Rostkowski",
-//         avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-//         link:''
-//     },
-//     {
-//         name:"Michał Zarzycki",
-//         avatar:'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
-//         link:''
-//     },
-//     {
-//        
-//     }]
-
-// }
-
 
 
     return (<React.Fragment>
@@ -58,7 +34,7 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
           
         <div className={styles.leftSide}>
             <div className={styles.titleSection}>
-                <div className={styles.title}>{title}</div>
+    <div className={styles.title}><Link to={`/project/${project.id}`}>{title}</Link></div>
                 <div className={styles.data}>data dodania i ostatniej modyfikacji</div>
             </div>
             <div className={styles.descrition}>{descrition}</div>

@@ -2,9 +2,7 @@ import React, { useContext } from 'react'
 import { Input, TextArea, Button } from 'semantic-ui-react'
 import useFormValidation from '../hooks/useFormValidation'
 import styles from './AddDev.module.css'
-import firebase from '../firebase/firebase'
 import FirebaseContext from '../firebase/context'
-import { parseWithOptions } from 'date-fns/fp'
 
 const INIT_STATE = {
     name:"",

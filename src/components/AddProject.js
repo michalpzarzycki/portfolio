@@ -33,6 +33,8 @@ function handleProjectCreate() {
             icon, 
             description,
             dates,
+            featuresDone:[],
+            featuresInProgress:[],
             developers: [...selectDev]
 
         }

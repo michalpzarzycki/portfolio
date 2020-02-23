@@ -34,7 +34,7 @@ function ArticleItem({ article, index, history }) {
          <Item.Image src='https://as1.ftcdn.net/jpg/00/76/31/18/500_F_76311829_sT3gJDd0aBdx497WkO72gs9vjCl22N8l.jpg' />
    
          <Item.Content>
-           <Item.Header as='a'>{article.title}</Item.Header>
+           <Item.Header as='a'><Link to={`/article/${article.id}`}>{article.title}</Link></Item.Header>
            <Item.Meta>
              <span>{`Posted by: ${article.postedBy.name}`}</span>
            </Item.Meta>

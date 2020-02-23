@@ -3,6 +3,7 @@ import styles from './Article.module.css'
 import FirebaseContext from '../firebase/context'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import Loading from './Loading'
+import Markdown from 'markdown-to-jsx';
 import { Comment, Header, Form, Button, Message } from 'semantic-ui-react'
 const INITIAL_STATE = {
     name: "",
@@ -84,8 +85,15 @@ function Article(props) {
                             <div> 4 minutes read</div>
                   
                     </div>
-
-                    <p className={styles.articleText} >{article.longDesc}</p>
+                    {console.log("ARR", article.longDesc.split("\n"))}
+        {article.longDesc.split ('\n').map((item, i) => {
+    
+                 return(<React.Fragment>
+                    <p className={styles.articleText} key={i}>{item}</p>
+                    <br />
+                            </React.Fragment>)
+        })}
+                  
 
 
 

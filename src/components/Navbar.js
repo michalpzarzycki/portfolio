@@ -13,7 +13,6 @@ const { user, firebase } = React.useContext(FirebaseContext)
 useEffect(()=>{
     let start = window.addEventListener('resize', () => {
         setIsMobile(window.innerWidth)
-        console.log("HEJ", window.innerWidth)
        
     })
     return () => {
@@ -22,8 +21,6 @@ useEffect(()=>{
 },[])
     return(
         <div className={styles.mainDiv}>
-            
-     {console.log("SCREEN", window.screen.width)}
  
             <div className={isMobile<800 ? styles.mobileNav : styles.none}>
                 <div className={styles.btn}

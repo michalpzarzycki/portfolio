@@ -22,6 +22,7 @@ const [loading, setLoading] = useState(true)
                
 
             })
+            console.log("DESC", pro[0].description)
             console.log("PRO", pro)
 console.log("LOADER W LISCIE", loading)
             setLoading(false)
@@ -41,7 +42,7 @@ console.log("LOADER W LISCIE", loading)
                            <Project 
                     loading={loading}
                     title={project.title}
-                    descrition={projects.description}
+                    description={project.description}
                     iconColor="blue"
                     iconName={project.icon}
                     iconSize="huge"

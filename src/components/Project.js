@@ -4,7 +4,7 @@ import { Icon, Image, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
 import ModalDev from './ModalDev'
-function Project({ title, descrition, iconName, iconSize, iconColor, developers, loading, project }) {
+function Project({ title, description, iconName, iconSize, iconColor, developers, loading, project }) {
     const {isStarted} = project;
 useEffect(()=>{
     console.log("LOADING W PROJEKCIE", loading)
@@ -42,8 +42,9 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
     
                 <div className={styles.data}>data dodania i ostatniej modyfikacji</div>
             </div>
-            <div className={styles.descrition}>{descrition}</div>
-            <span>Developed by: </span>
+            {console.log("project", title)}
+            <div className={styles.description}>{description}</div>
+            <span className={styles.spanDevelopers}>Developed by: </span>
             <div className={styles.developers}>
 
                 
@@ -56,9 +57,11 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
                 {developers.map((developer) => {
                     return(
                            <div>
-                        <ModalDev triger={<div
-                        style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px", cursor:"pointer"}}><Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
-                        <span>{DEV_INFO[developer].name}</span></div>} devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
+                        <ModalDev triger={
+                        <div className={styles.modalDevDiv} >
+                            <Image  size="tiny" src={DEV_INFO[developer].avatar} avatar className={styles.avatar}/>
+                        <span>{DEV_INFO[developer].name}</span>
+                        </div>} devInfo={DEV_INFO[developer]} devsLength={DEV_LENGTH}/>
                     </div>
                      
                     )

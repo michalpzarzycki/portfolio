@@ -71,16 +71,16 @@ function Article(props) {
                 <div className={styles.mainDiv}>
                     <div className={styles.title}>{article.title}</div>
                     {/* <p className={styles.short}>{article.shortDesc}</p> */}
-                    <div>{article.shortDesc}</div>
+                    <div className={styles.shortDesc}>{article.shortDesc}</div>
 
 
                     <div className={styles.infoSection} style={{width:"70%", justifyContent:"center"}}>
                         
-                            <div>{`Posted by: ${article.postedBy.name} |`}</div>
-                            <div>{` Created: ${formatDistanceToNow(article.created, {addSuffix: true})} |`}</div>
+                            <div>{`Posted by: ${article.postedBy.name} | `}</div>
+                            <div>{` Created: ${formatDistanceToNow(article.created, {addSuffix: true})} | `}</div>
                        
                   
-                            <div>{` LIKES: ${article.votes.length} |`}</div>
+                            <div>{` LIKES: ${article.votes.length} | `}</div>
                             <div> 4 minutes read</div>
                   
                     </div>
@@ -90,7 +90,7 @@ function Article(props) {
 
 
 
-                    <Comment.Group>
+                    <Comment.Group style={{width:"100%"}}>
                         <Form reply>
                             <Form.TextArea placeholder="Add comment"
                                 

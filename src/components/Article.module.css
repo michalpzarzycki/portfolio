@@ -11,10 +11,36 @@
 
 .infoSection {
     display: flex;
+    padding: 2%;
+    font-family: 'Fira Sans';
+    flex-wrap: wrap;
+}
+
+.title {
+    font-family: 'Odibee Sans';
+    font-size: 200%;
+    padding: 2%;
+
+}
+
+.shortDesc {
+padding: 2%;
+font-family: 'Caveat';
+font-size: 150%;
 }
 
 .articleText {
     width: 80%;
+    font-family: 'Roboto Slab';
+    font-size: 125%;
+    
+
+}
+
+@media screen and (max-width:1200px) and (min-width:601px) {
+    .mainDiv {
+        width: 90%;
+    }
 }
 
 

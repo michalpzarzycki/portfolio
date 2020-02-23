@@ -69,9 +69,9 @@ function Article(props) {
         {isLoading ? <Loading /> :
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", top: "30px" }}>
                 <div className={styles.mainDiv}>
-                    <h1 className={styles.title}>{article.title}</h1>
+                    <div className={styles.title}>{article.title}</div>
                     {/* <p className={styles.short}>{article.shortDesc}</p> */}
-                    <Message color='blue'>{article.shortDesc}</Message>
+                    <div>{article.shortDesc}</div>
 
 
                     <div className={styles.infoSection} style={{width:"70%", justifyContent:"center"}}>
@@ -85,7 +85,7 @@ function Article(props) {
                   
                     </div>
 
-                    <p style={{ width: "70%" }}>{article.longDesc}</p>
+                    <p className={styles.articleText} >{article.longDesc}</p>
 
 
 

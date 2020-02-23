@@ -1,13 +1,29 @@
 .mainDiv {
-    width: 60%;
+    position: absolute;
+    top: 30px;
+    width: 70%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background: white;
 }
 
 .infoSection {
     display: flex;
+}
+
+.articleText {
+    width: 80%;
+}
+
+
+@media screen and (max-width:600px) {
+    .mainDiv {
+        width: 95%;
+    }
+
+    .articleText {
+        width: 95%;
+    }
 }

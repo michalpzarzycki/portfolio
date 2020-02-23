@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     background: transparent;
+    animation: fadein 3s;
 }
 
 .form {
@@ -13,3 +14,8 @@
     min-width: 600px;
     min-height: 50vh;
 }
+
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }

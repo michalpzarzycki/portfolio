@@ -10,6 +10,8 @@
         top: 0; /* Position the navbar at the top of the page */
         z-index: 999;
       align-items: center;
+      font-family: 'Fira Sans';
+
 
 }
 
@@ -27,8 +29,13 @@
 }
 
 .links > * {
-    padding-right: 10px;
+    padding: 5px;
+    text-align: center;
 
+}
+.links >*:hover {
+    background: black;
+    color: white;
 }
 .imageContainer {
     width: 100%;

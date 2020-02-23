@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom'
 import { Icon } from 'semantic-ui-react'
@@ -7,16 +7,23 @@ import FirebaseContext from '../firebase/context'
 
 
 export function Navbar() {
-    const [isMobile, setIsMobile] = useState(true)
+    const [isMobile, setIsMobile] = useState(window.innerWidth)
     const [navClick, setNavCLick] = useState(false)
 const { user, firebase } = React.useContext(FirebaseContext)
-console.log("USEEER", user)
+useEffect(()=>{
+    let start = window.addEventListener('resize', () => {
+        setIsMobile(window.innerWidth)
+        console.log("HEJ", window.innerWidth)
+       
+    })
+    return () => {
+        window.removeEventListener(start)
+    }
+},[])
     return(
         <div className={styles.mainDiv}>
             
-            {window.addEventListener('resize', () => {
-                setIsMobile(window.screen.width)
-            })}
+     {console.log("SCREEN", window.screen.width)}
  
             <div className={isMobile<800 ? styles.mobileNav : styles.none}>
                 <div className={styles.btn}

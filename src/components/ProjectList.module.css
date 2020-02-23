@@ -8,6 +8,12 @@
     align-items: center;
     color: wheat;
     position: relative;
-    
+    animation: fadein 2s;
    overflow: hidden;
 }
+
+
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }

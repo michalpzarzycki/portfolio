@@ -55,12 +55,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: fadein 2s;
+    font-family: 'Fira Sans';
 }
 .mobileNavDisplay > * {
     text-align: center;
     width: 100%;
     border-bottom: 1px solid black;
     padding: 1%;
+    animation: fadein 2s;
+}
+.mobileNavDisplay > *:hover {
+    background: black;
+    color: white;
 }
 .mobileNav {
     width: 100%;
@@ -74,3 +81,8 @@
     height: 30%;
     cursor: pointer;
 }
+
+@keyframes fadein {
+    from { opacity: 0}
+    to   { opacity: 1}
+  }

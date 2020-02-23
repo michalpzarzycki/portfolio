@@ -32,14 +32,14 @@ function ProjectDetail(props) {
     return (<React.Fragment>
         {isLoading ? <Loading /> : <div className={styles.mainDiv}>
             <div className={styles.content}>
-                <div>PROJECT NAME: {project.title}</div>
-                <div>DESCRIPTION: {project.description}</div>
+                <div className={styles.projectName}>{project.title}</div>
+                <div className={styles.projectDescription}>{project.description}</div>
     <a href={project.link}>GITHUB LINK: {project.link}</a>
    {project.featuresDone.map((done)=>{
           return <div><Icon name="check" />{done}</div>
    })}
      {project.featuresInProgress.map((inProgress)=>{
-          return <div><Icon loading name='spinner' />{inProgress}</div>
+          return <div><Icon loading name='spinner'/>{inProgress}</div>
    })}
             </div>
 

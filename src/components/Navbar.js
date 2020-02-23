@@ -10,7 +10,9 @@ const { user, firebase } = React.useContext(FirebaseContext)
 console.log("USEEER", user)
     return(
         <div className={styles.mainDiv}>
-            <div className={styles.logo}>LOGO</div>
+            <div className={styles.logo}>
+                <div className={styles.imageContainer}><img  className={styles.image} src="https://avatars2.githubusercontent.com/u/41584779?s=460&v=4"/></div>
+            </div>
             <div className={styles.links}>
                 <Link to="/projects">My projects</Link>
                 {user && <Link to="/addarticle">ADD ARTICLE</Link>}

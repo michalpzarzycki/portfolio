@@ -10,22 +10,24 @@
         position: fixed; /* Set the navbar to fixed position */
         top: 0; /* Position the navbar at the top of the page */
         z-index: 999;
+      align-items: center;
 
 }
 
 .links {
     display: flex;
     justify-content: flex-end;
-    width: 50%;
+    width: 90%;
     padding: 10px;
 }
 
 .logo {
     display: flex;
-    width: 50%;
+    width: 10%;
     padding: 10px;
 }
 
 .links > * {
     padding-right: 10px;
+
 }

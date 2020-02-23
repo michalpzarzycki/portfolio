@@ -1,7 +1,8 @@
 .mainDiv {
     display: flex;
-    width: 900px;
-    height: 400px;
+
+    width: 80%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     border: 2px solid rgb(57, 255, 20);
@@ -73,6 +74,7 @@ box-shadow: 0px 0px 20px 3px rgba(40,164,247,1)!important;
 .developers {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -109,3 +111,17 @@ align-items: center;
 .none {
     display: none;
 }
+
+@media screen and (max-width: 1200px) and (min-width:801px) {
+    .mainDiv {
+        width: 95%;
+      }
+}
+
+@media screen and (max-width: 800px) {
+    .mainDiv {
+      width: 95%;
+    }
+    .rightSide {
+        display: none;    }
+  }

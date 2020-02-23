@@ -33,9 +33,9 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
     return (<React.Fragment>
   
       <div className={styles.mainDiv}>
-      <div className={project.isStarted ? styles.none : styles.notStarted} >
+      {/* <div className={project.isStarted ? styles.none : styles.notStarted} >
       the project has not started yet
-   </div>
+   </div> */}
         <div className={styles.leftSide}>
             <div className={styles.titleSection}>
     <div className={styles.title}><Link to={`/project/${project.id}`}>{title}</Link></div>
@@ -43,14 +43,15 @@ const DEV_LENGTH = Object.keys(DEV_INFO).length
                 <div className={styles.data}>data dodania i ostatniej modyfikacji</div>
             </div>
             <div className={styles.descrition}>{descrition}</div>
+            <span>Developed by: </span>
             <div className={styles.developers}>
 
                 
-                <div  style={{display: "flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginRight:"10px"}}>
                 
-                <Image  size="tiny" src='https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' avatar />
-                    <span>Developed by: </span>
-                </div>
+                
+                
+                  
+              
 
                 {developers.map((developer) => {
                     return(

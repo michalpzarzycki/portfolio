@@ -24,7 +24,7 @@ function App() {
         <BrowserRouter>
         <FirebaseContext.Provider value={{ user, firebase }}>
         <Navbar />
-        <div className="content">
+        <div className="contentApp">
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/login" component={Login}/>

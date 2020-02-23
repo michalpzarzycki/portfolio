@@ -1,20 +1,17 @@
 .mainApp {
-  background: url("https://images.pexels.com/photos/2047905/pexels-photo-2047905.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 0% 50%;
-  background-size: cover;
+
   width: 100%; 
   height: 100vh;
+
   position: relative;
 
 }
 
-.content {
+.contentApp {
 position: absolute;
 top: 10%;
 left: 0;
 width: 100%;
 height: 100%;
-background: transparent;
+margin-top: 3%;
 }

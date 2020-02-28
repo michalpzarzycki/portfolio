@@ -5,6 +5,7 @@
 
   position: relative;
 
+
 }
 
 .contentApp {
@@ -13,5 +14,12 @@ top: 10%;
 left: 0;
 width: 100%;
 height: 85.5%;
-margin-top: 3%;
+padding-top: 3%;
+overflow-y: scroll;
 }
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }

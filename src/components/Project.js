@@ -24,7 +24,17 @@ const DEV_INFO = {
         name:"Michał Zarzycki",
                avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
                link:'https://github.com/michalpzarzycki'
-    } 
+    },
+    "Marysia": {
+        name:"Michał Zarzycki",
+               avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+               link:'https://github.com/michalpzarzycki'
+    },
+    "Robert": {
+        name:"Michał Zarzycki",
+               avatar: 'https://avatars2.githubusercontent.com/u/41584779?s=460&v=4',
+               link:'https://github.com/michalpzarzycki'
+    }  
 }
 const DEV_LENGTH = Object.keys(DEV_INFO).length
 

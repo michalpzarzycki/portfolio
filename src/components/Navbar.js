@@ -16,7 +16,7 @@ useEffect(()=>{
        
     })
     return () => {
-        window.removeEventListener(start)
+        window.removeEventListener(start, null)
     }
 },[])
     return(

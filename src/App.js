@@ -21,6 +21,7 @@ function App() {
   const user = useAuth()
   return (
     <div className="mainApp">
+      <div className="background">
         <BrowserRouter>
         <FirebaseContext.Provider value={{ user, firebase }}>
         <Navbar />
@@ -39,6 +40,7 @@ function App() {
         </div>
         </FirebaseContext.Provider>
         </BrowserRouter>
+        </div>
     </div>
   );
 }

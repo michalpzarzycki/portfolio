@@ -5,12 +5,12 @@
     align-items: center;
     display: flex;
     animation: fadein 2s;
+    
 }
 
 
 .content {
    width: 50%;
-   background-color: white;
    min-height: 50%;
 }
 

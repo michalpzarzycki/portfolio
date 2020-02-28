@@ -10,6 +10,7 @@
     position: relative;
     animation: fadein 2s;
    overflow: hidden;
+   padding-top: 3px;
 }
 
 

@@ -8,7 +8,7 @@ function Loading() {
     }, [])
     return(
         <div style={{width:"100%", height:"90vh", display:"flex", alignItems:"center", justifyContent:"center", flexDirection:"column"}}>
-        <Icon loading size="massive" name="react" color="blue"  />
+        <Icon loading size="massive" name="react" color="white"  />
         <p style={{fontSize:"40px", color:"blue"}}>Loading...</p>
     </div>
     )

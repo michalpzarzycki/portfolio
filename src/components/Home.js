@@ -6,12 +6,14 @@ function Home() {
 
     return(
         <div className={styles.mainDiv}>
-            <div  className={styles.welcomeSection}>
+            <div className={styles.h1}>MY PORTFOLIO</div>
+            <div className={styles.h2}>MICHAŁ ZARZYCKI</div>
+            {/* <div  className={styles.welcomeSection}>
                 <div className={styles.content}>
                 <Link to="/">WELCOME!</Link>
                 <p>A SHORT DESCRIPTION</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

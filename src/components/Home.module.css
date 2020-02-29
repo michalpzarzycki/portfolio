@@ -6,13 +6,25 @@
     justify-content: center;
     align-items: center;
     background:
-
+  
     linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%),   url("https://www.etonline.com/sites/default/files/styles/video_1920x1080/public/images/2020-01/eto_dn_selena_gomez_010820.jpg?itok=6W_DYNyJ");
     background-blend-mode: screen, difference, lighten;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     animation: fadein 2s;
+    flex-direction: column;
+  font-size: 150%;
+}
+.h1 {
+    mix-blend-mode: overlay;
+    transform: skew(0deg, -30deg) scaleY(1.33333);
+    margin-bottom: 1%;
+}
+
+.h2 {
+    mix-blend-mode: overlay;
+    transform: skew(0deg, -30deg) scaleY(1.33333);
 
 }
 .welcomeSection {
